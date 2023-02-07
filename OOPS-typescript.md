@@ -7,7 +7,7 @@ class:
 
 ![](https://miro.medium.com/max/500/1*-dmHYcAiphpWe6m0pcd-AA.png)
 
-### Using Typescript & Angular
+### Using Typescript
 
 ---
 
@@ -23,7 +23,10 @@ class:
 ## Encapsulation
 
 ```typescript
-class Player {
+interface User {
+  name: string;
+}
+class Player implements User {
   private _health = 100;
   get health() {
     return this._health;
@@ -41,19 +44,21 @@ console.log(player._health);
 ## Abstraction
 
 ```typescript
-class Player {
-  private _health = 100;
-  get health() {
-    return this._health;
-  }
-  setHealth(hpChange: number) {
-    this._health = this._health + hpChange;
+abstract class User {
+  abstract getProfile(): User;
+}
+const user = new User();
+// Cannot create an instance of an abstract class.
+class Player extends User {
+  getProfile() {
+    return this;
   }
 }
-const player = new Player();
-player.setHealth(-10);
-console.log(player.health);
-// 90
+class Player extends User {
+  getProfile() {
+    return this;
+  }
+}
 ```
 
 ---
@@ -146,9 +151,12 @@ function WithDestroy(Base) {
 
     ngOnDestroy() {
       super.ngOnDestroy();
-      this.destroy();
+      this.destroy$.complete();
     }
   };
+}
+export class Player extends WithDestroy(User) {
+  // ...
 }
 ```
 
@@ -256,7 +264,7 @@ const x = "hello" as number;
 
 <style>
     :root {
-    --color-background: #0f0;
+    --color-background: #000;
     --color-foreground: #fff;
     --color-background-code: #00000088;
     --color-highlight: #f00;
