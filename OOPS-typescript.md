@@ -262,7 +262,7 @@ const x = "hello" as number;
 
 ```
 
-<style>
+<style style="display:none">
     :root {
     --color-background: #000;
     --color-foreground: #fff;
