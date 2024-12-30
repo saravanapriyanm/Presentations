@@ -41,6 +41,8 @@ git clone <url>
 
 ## Remote
 
+![bg left:60% 100%](https://git-scm.com/book/en/v2/images/remote-branches-2.png)
+
 ```bash
 git remote add origin <url>
 git push -u origin master
@@ -73,11 +75,14 @@ git commit -m "message"
 ```
 
 1. Add prefixes to commit message (fix, feat, config, other).
+
    Example: `feat: Carousel component added.`
+
 2. Multiline commit message for multiple changes.
    Example:
    ```
    feat: Carousel component added.
+   fix: Header text overflow.
    ```
 
 ---
@@ -145,11 +150,11 @@ VS code extensions
 
 1. Branch policies
 2. Pull request
-   - Set Auto complete.
    - Add Work Items.
-   - Prefixes in title and commits.
-   - Description on what to test.
-   - Reviewers
+   - Add Prefix in title.
+   - Add Description on what to test.
+   - Add Reviewers
+   - Set Auto complete.
 3. Code review
 4. CI/CD
 5. Work items
@@ -163,7 +168,7 @@ VS code extensions
     --color-dimmed: #f00;
   }
   section{
-    background-image: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80');
+    background-image: url('https://images.unsplash.com/photo-1618556450991-2f1af64e8191?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
   }
   a{
     color:#fff;
